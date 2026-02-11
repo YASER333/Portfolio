@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme (Luxurious Minimal) */
+  --bg-color: #fdfaf6;
+  /* Ivory / Soft Beige */
+  --text-color: #1a1a1a;
+  --accent-color: #4a4a4a;
+  /* Darker Grey for visibility */
+  --secondary-color: #b08d55;
+  /* Darker Gold/Bronze */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --heading-font: 'Playfair Display', serif;
+  --body-font: 'Inter', sans-serif;
+
+  /* Particle/Background Elements */
+  --particle-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] {
+  /* Dark Theme (Futuristic Cozy) */
+  --bg-color: #0c0c0c;
+  /* Deep Black */
+  --text-color: #e0e0e0;
+  --accent-color: #4facfe;
+  /* Muted Electric Blue */
+  --secondary-color: #ffd700;
+  /* Subtle Gold */
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+
+  --particle-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Base styles override */
+* {
+  transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* Utilities for glass text */
+.glass-text {
+  background: linear-gradient(45deg, var(--text-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
